@@ -1,0 +1,21 @@
+$(document).on('ready turbolinks:load', function(){
+    $("input[name='find']").keyup(function(){
+        var f = $(this).val()
+        if(f.length > 2){
+            $.ajax({
+                type: 'get',
+                url: '/companies',
+                data: { find: f},
+                dataType: 'script'
+            });
+        }
+        // Liberar
+        if(f.length == 2){
+            $.ajax({
+                type: 'get',
+                url: '/companies',
+                dataType: 'script'
+            });
+        }
+    });
+});

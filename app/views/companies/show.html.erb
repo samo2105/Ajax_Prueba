@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Empresa:</strong>
+  <%= @company.name %>
+</h1>
+<h3> Cantidad de reclamos: <%= @company.complaints.count %></h3>
+<hr>
+<h3> Crear Reclamo</h3>
+<%= render 'complaints/form', complaint: @complaint, company: @company %>
+<hr>
+<h4> Reclamos </h4>
+<ul id="complains">
+<% @company.complaints.order(created_at: :desc).each do |complaint| %>
+    <li><b>Reclamo:</b> <%= complaint.content %> - <b>Usuario:</b>
+  <%= complaint.user.email %></li>
+<% end %>
+</ul>
+<%= link_to 'Back', companies_path, class:'btn btn-primary col-sm-4' %>
