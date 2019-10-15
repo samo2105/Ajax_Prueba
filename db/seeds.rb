@@ -9,6 +9,7 @@
 Complaint.destroy_all
 User.destroy_all
 Company.destroy_all
+AdminUser.destroy_all
 
 20.times do
   Company.create(name: Faker::Company.name)
@@ -21,3 +22,5 @@ end
 250.times do
   Complaint.create(content: Faker::Lorem.sentence, user_id: User.all.sample.id, company_id: Company.all.sample.id)
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
