@@ -1,5 +1,7 @@
 # README
 
+#Heroku Link: https://ajaxtest5.herokuapp.com/companies
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
