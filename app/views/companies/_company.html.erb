@@ -2,5 +2,5 @@
   <td><%= company.name %></td>
   <td><%= link_to 'Ver Empresa', company, class:'btn btn-primary' %></td>
   <td><%= link_to 'Editar Empresa', edit_company_path(company), data: {remote: true}, class:'btn btn-warning' %></td>
-  <td><%= link_to 'Eliminar Empresa', company, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class:'btn btn-danger' %></td>
+  <td><%= link_to 'Eliminar Empresa', company, method: :delete, data: { confirm: 'Esta acción es irreversible y se eliminarán todos sus reclamos, ¿estás seguro?', remote: true }, class:'btn btn-danger' %></td>
 </tr>
